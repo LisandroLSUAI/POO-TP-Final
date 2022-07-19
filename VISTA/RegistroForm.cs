@@ -61,7 +61,7 @@ namespace VISTA
 			bool isAdminUser = empleadoRbtn.Checked;
 			if(isAdminUser && !CheckSuperAdminCredentials())
             {
-				ShowError("Debe ingresar las credenciales de super administrador para poder registrar un usuario Administrador.");
+				ShowError("Las credenciales de Super administrador no son válidas.");
 				return;
             }
 

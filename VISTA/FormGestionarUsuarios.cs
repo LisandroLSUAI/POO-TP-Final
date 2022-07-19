@@ -15,7 +15,6 @@ namespace VISTA
     public partial class FormGestionarUsuarios : Form
     {
         private readonly ControladoraUsuarios userControl = ControladoraUsuarios.obtener_instancia();
-        private readonly ControladoraPerfiles profileControl = ControladoraPerfiles.obtener_instancia();
 
         private readonly int usuarioId;
         public FormGestionarUsuarios(int usuarioId)

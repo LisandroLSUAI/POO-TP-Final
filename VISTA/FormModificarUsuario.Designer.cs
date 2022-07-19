@@ -35,10 +35,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.groupBoxPass = new System.Windows.Forms.GroupBox();
             this.checkBoxPass = new System.Windows.Forms.CheckBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBoxPass = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.textBoxPassRepeat = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBoxPass = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
             this.numericUpDownDNI = new System.Windows.Forms.NumericUpDown();
@@ -111,22 +111,14 @@
             this.checkBoxPass.UseVisualStyleBackColor = true;
             this.checkBoxPass.CheckedChanged += new System.EventHandler(this.checkBoxPass_CheckedChanged);
             // 
-            // label4
+            // textBoxPassRepeat
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 36);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Nueva Contraseña";
-            // 
-            // textBoxPass
-            // 
-            this.textBoxPass.Location = new System.Drawing.Point(110, 33);
-            this.textBoxPass.Name = "textBoxPass";
-            this.textBoxPass.ReadOnly = true;
-            this.textBoxPass.Size = new System.Drawing.Size(136, 20);
-            this.textBoxPass.TabIndex = 1;
+            this.textBoxPassRepeat.Location = new System.Drawing.Point(110, 59);
+            this.textBoxPassRepeat.Name = "textBoxPassRepeat";
+            this.textBoxPassRepeat.ReadOnly = true;
+            this.textBoxPassRepeat.Size = new System.Drawing.Size(136, 20);
+            this.textBoxPassRepeat.TabIndex = 1;
+            this.textBoxPassRepeat.UseSystemPasswordChar = true;
             // 
             // label5
             // 
@@ -137,13 +129,23 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Repetir Contraseña";
             // 
-            // textBoxPassRepeat
+            // textBoxPass
             // 
-            this.textBoxPassRepeat.Location = new System.Drawing.Point(110, 59);
-            this.textBoxPassRepeat.Name = "textBoxPassRepeat";
-            this.textBoxPassRepeat.ReadOnly = true;
-            this.textBoxPassRepeat.Size = new System.Drawing.Size(136, 20);
-            this.textBoxPassRepeat.TabIndex = 1;
+            this.textBoxPass.Location = new System.Drawing.Point(110, 33);
+            this.textBoxPass.Name = "textBoxPass";
+            this.textBoxPass.ReadOnly = true;
+            this.textBoxPass.Size = new System.Drawing.Size(136, 20);
+            this.textBoxPass.TabIndex = 1;
+            this.textBoxPass.UseSystemPasswordChar = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 36);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(96, 13);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Nueva Contraseña";
             // 
             // buttonCancel
             // 

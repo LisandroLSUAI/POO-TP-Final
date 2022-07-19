@@ -15,7 +15,6 @@ namespace VISTA
     public partial class FormModificarUsuario : Form
     {
         private readonly ControladoraUsuarios userControl = ControladoraUsuarios.obtener_instancia();
-        private readonly ControladoraPerfiles profileControl = ControladoraPerfiles.obtener_instancia();
         private Usuario user;
         public FormModificarUsuario(Usuario user)
         {
