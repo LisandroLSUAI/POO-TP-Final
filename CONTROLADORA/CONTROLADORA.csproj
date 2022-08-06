@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ControladoraPerfiles.cs" />
+    <Compile Include="ControladoraProductos.cs" />
     <Compile Include="ControladoraUsuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

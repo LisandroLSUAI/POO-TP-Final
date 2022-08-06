@@ -38,8 +38,10 @@ namespace VISTA
 
             if (usuario != null)
 			{
-                FormGestionarUsuarios form = new FormGestionarUsuarios(usuario.Id);
-                form.Show();
+                //FormGestionarUsuarios form = new FormGestionarUsuarios(usuario.Id);
+                //form.Show();
+                MenuPrincipal menu = new MenuPrincipal(usuario);
+                menu.ShowDialog();
                 this.Close();
             } else
 			{
