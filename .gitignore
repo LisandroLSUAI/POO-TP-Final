@@ -528,3 +528,5 @@ FodyWeavers.xsd
 MODELO/Contexto.edmx.sql
 MODELO/App.Config
 VISTA/App.config
+
+MODELO/Contexto.Designer.cs
