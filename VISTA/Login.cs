@@ -47,6 +47,7 @@ namespace VISTA
             if (usuario.Contraseña != encPass)
             {
                 ShowError("La contraseña ingresada es incorrecta.");
+                return;
             }
 
             //FormGestionarUsuarios form = new FormGestionarUsuarios(usuario.Id);
