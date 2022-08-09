@@ -24,12 +24,14 @@ namespace VISTA
         {
             FormGestionarUsuarios form = new FormGestionarUsuarios(usuario.Id);
             form.Show();
+            this.Close();
         }
 
         private void btnProductos_Click(object sender, EventArgs e)
         {
             ABMProductos productos = new ABMProductos();
             productos.ShowDialog();
+            this.Close();
         }
     }
 }

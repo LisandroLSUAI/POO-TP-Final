@@ -88,10 +88,22 @@ namespace VISTA
                 foreach(DataGridViewRow selectedRow in dgvGestionarUsuarios.SelectedRows)
                 {
                     Usuario selectedUser = selectedRow.DataBoundItem as Usuario;
-                    userControl.Eliminar_Usuario(selectedUser);
+
+                    if (selectedUser.Perfil.Id == Perfil.SUPER_ADMIN)
+                    {
+                        ShowError("¡No puedes borrar la cuenta de Super Admin!");
+                        return;
+                    }
+
+                    if (selectedUser.Id == usuarioId)
+                    {
+                        RemoveWithConfirmation(selectedUser);
+                    } else
+                    {
+                        userControl.Eliminar_Usuario(selectedUser);
+                        UpdateUsers();
+                    }
                 }
-                
-                UpdateUsers();
             } catch(Exception error)
             {
                 ShowError("Error al eliminar usuario: " + error.Message);
@@ -112,6 +124,17 @@ namespace VISTA
         private void ShowError(string msg)
         {
             MessageBox.Show(msg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void RemoveWithConfirmation(Usuario user)
+        {
+            DialogResult result = MessageBox.Show("¿Quieres eliminar tu propia cuenta? Si seleccionas Aceptar, tu cuenta se borrará y saldrás de la app.", "Eliminar cuenta", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.OK)
+            {
+                userControl.Eliminar_Usuario(user);
+                this.Close();
+            }
         }
     }
 }

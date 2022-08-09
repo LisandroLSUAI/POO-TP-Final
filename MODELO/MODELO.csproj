@@ -94,7 +94,7 @@
     </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.Config" />
+    <None Include="App.config" />
     <None Include="Contexto.edmx.diagram">
       <DependentUpon>Contexto.edmx</DependentUpon>
     </None>
