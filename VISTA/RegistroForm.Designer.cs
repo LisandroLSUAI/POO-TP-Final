@@ -37,8 +37,8 @@
             this.groupBoxTipo = new System.Windows.Forms.GroupBox();
             this.clienteRbtn = new System.Windows.Forms.RadioButton();
             this.empleadoRbtn = new System.Windows.Forms.RadioButton();
-            this.textBoxSuperAdminPass = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.textBoxSuperAdminPass = new System.Windows.Forms.TextBox();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -53,7 +53,7 @@
             this.label2.Location = new System.Drawing.Point(105, 114);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
-            this.label2.TabIndex = 11;
+            this.label2.TabIndex = 800;
             this.label2.Text = "Contraseña";
             // 
             // label1
@@ -62,7 +62,7 @@
             this.label1.Location = new System.Drawing.Point(105, 71);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 10;
+            this.label1.TabIndex = 800;
             this.label1.Text = "Nombre";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
@@ -80,14 +80,14 @@
             this.txtNombre.Location = new System.Drawing.Point(174, 68);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(134, 20);
-            this.txtNombre.TabIndex = 8;
+            this.txtNombre.TabIndex = 1;
             // 
             // btnCancelar
             // 
             this.btnCancelar.Location = new System.Drawing.Point(236, 391);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(92, 36);
-            this.btnCancelar.TabIndex = 7;
+            this.btnCancelar.TabIndex = 18;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -97,7 +97,7 @@
             this.btnRegistrar.Location = new System.Drawing.Point(84, 391);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(94, 36);
-            this.btnRegistrar.TabIndex = 6;
+            this.btnRegistrar.TabIndex = 17;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
@@ -111,7 +111,7 @@
             this.groupBoxTipo.Location = new System.Drawing.Point(108, 246);
             this.groupBoxTipo.Name = "groupBoxTipo";
             this.groupBoxTipo.Size = new System.Drawing.Size(200, 127);
-            this.groupBoxTipo.TabIndex = 12;
+            this.groupBoxTipo.TabIndex = 140;
             this.groupBoxTipo.TabStop = false;
             this.groupBoxTipo.Text = "Tipo de Perfil";
             // 
@@ -122,7 +122,7 @@
             this.clienteRbtn.Location = new System.Drawing.Point(24, 29);
             this.clienteRbtn.Name = "clienteRbtn";
             this.clienteRbtn.Size = new System.Drawing.Size(57, 17);
-            this.clienteRbtn.TabIndex = 1;
+            this.clienteRbtn.TabIndex = 14;
             this.clienteRbtn.TabStop = true;
             this.clienteRbtn.Text = "Cliente";
             this.clienteRbtn.UseVisualStyleBackColor = true;
@@ -133,10 +133,20 @@
             this.empleadoRbtn.Location = new System.Drawing.Point(24, 52);
             this.empleadoRbtn.Name = "empleadoRbtn";
             this.empleadoRbtn.Size = new System.Drawing.Size(88, 17);
-            this.empleadoRbtn.TabIndex = 0;
+            this.empleadoRbtn.TabIndex = 15;
             this.empleadoRbtn.Text = "Administrador";
             this.empleadoRbtn.UseVisualStyleBackColor = true;
             this.empleadoRbtn.CheckedChanged += new System.EventHandler(this.empleadoRbtn_CheckedChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(38, 72);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(139, 13);
+            this.label3.TabIndex = 800;
+            this.label3.Text = "Contraseña de SuperAdmin:";
+            this.label3.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBoxSuperAdminPass
             // 
@@ -145,25 +155,15 @@
             this.textBoxSuperAdminPass.PasswordChar = '*';
             this.textBoxSuperAdminPass.ReadOnly = true;
             this.textBoxSuperAdminPass.Size = new System.Drawing.Size(133, 20);
-            this.textBoxSuperAdminPass.TabIndex = 9;
+            this.textBoxSuperAdminPass.TabIndex = 16;
             this.textBoxSuperAdminPass.UseSystemPasswordChar = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(38, 72);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(139, 13);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Contraseña de SuperAdmin:";
-            this.label3.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBoxEmail
             // 
             this.textBoxEmail.Location = new System.Drawing.Point(174, 149);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(134, 20);
-            this.textBoxEmail.TabIndex = 8;
+            this.textBoxEmail.TabIndex = 10;
             // 
             // label4
             // 
@@ -171,7 +171,7 @@
             this.label4.Location = new System.Drawing.Point(105, 152);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 10;
+            this.label4.TabIndex = 100;
             this.label4.Text = "E-mail";
             this.label4.Click += new System.EventHandler(this.label1_Click);
             // 
@@ -181,7 +181,7 @@
             this.label5.Location = new System.Drawing.Point(105, 191);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(26, 13);
-            this.label5.TabIndex = 10;
+            this.label5.TabIndex = 100;
             this.label5.Text = "DNI";
             this.label5.Click += new System.EventHandler(this.label1_Click);
             // 
@@ -195,7 +195,7 @@
             0});
             this.numericUpDownDNI.Name = "numericUpDownDNI";
             this.numericUpDownDNI.Size = new System.Drawing.Size(134, 20);
-            this.numericUpDownDNI.TabIndex = 13;
+            this.numericUpDownDNI.TabIndex = 11;
             // 
             // RegistroForm
             // 

@@ -76,7 +76,7 @@
             this.textBoxEmail.Location = new System.Drawing.Point(122, 74);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(136, 20);
-            this.textBoxEmail.TabIndex = 1;
+            this.textBoxEmail.TabIndex = 2;
             // 
             // label3
             // 
@@ -106,7 +106,7 @@
             this.checkBoxPass.Location = new System.Drawing.Point(6, 0);
             this.checkBoxPass.Name = "checkBoxPass";
             this.checkBoxPass.Size = new System.Drawing.Size(120, 17);
-            this.checkBoxPass.TabIndex = 3;
+            this.checkBoxPass.TabIndex = 4;
             this.checkBoxPass.Text = "Cambiar contraseña";
             this.checkBoxPass.UseVisualStyleBackColor = true;
             this.checkBoxPass.CheckedChanged += new System.EventHandler(this.checkBoxPass_CheckedChanged);
@@ -117,7 +117,7 @@
             this.textBoxPassRepeat.Name = "textBoxPassRepeat";
             this.textBoxPassRepeat.ReadOnly = true;
             this.textBoxPassRepeat.Size = new System.Drawing.Size(136, 20);
-            this.textBoxPassRepeat.TabIndex = 1;
+            this.textBoxPassRepeat.TabIndex = 8;
             this.textBoxPassRepeat.UseSystemPasswordChar = true;
             // 
             // label5
@@ -135,7 +135,7 @@
             this.textBoxPass.Name = "textBoxPass";
             this.textBoxPass.ReadOnly = true;
             this.textBoxPass.Size = new System.Drawing.Size(136, 20);
-            this.textBoxPass.TabIndex = 1;
+            this.textBoxPass.TabIndex = 7;
             this.textBoxPass.UseSystemPasswordChar = true;
             // 
             // label4
@@ -152,7 +152,7 @@
             this.buttonCancel.Location = new System.Drawing.Point(140, 329);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(85, 32);
-            this.buttonCancel.TabIndex = 5;
+            this.buttonCancel.TabIndex = 10;
             this.buttonCancel.Text = "Cancelar";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
@@ -162,7 +162,7 @@
             this.buttonSave.Location = new System.Drawing.Point(49, 329);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(85, 32);
-            this.buttonSave.TabIndex = 5;
+            this.buttonSave.TabIndex = 9;
             this.buttonSave.Text = "Guardar";
             this.buttonSave.UseVisualStyleBackColor = true;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
@@ -178,7 +178,7 @@
             this.numericUpDownDNI.Name = "numericUpDownDNI";
             this.numericUpDownDNI.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.numericUpDownDNI.Size = new System.Drawing.Size(136, 20);
-            this.numericUpDownDNI.TabIndex = 6;
+            this.numericUpDownDNI.TabIndex = 3;
             // 
             // FormModificarUsuario
             // 

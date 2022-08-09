@@ -23,15 +23,15 @@ namespace VISTA
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
             FormGestionarUsuarios form = new FormGestionarUsuarios(usuario.Id);
-            form.Show();
             this.Close();
+            form.Show();
         }
 
         private void btnProductos_Click(object sender, EventArgs e)
         {
             ABMProductos productos = new ABMProductos();
-            productos.ShowDialog();
             this.Close();
+            productos.ShowDialog();
         }
     }
 }

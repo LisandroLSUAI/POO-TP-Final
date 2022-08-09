@@ -20,6 +20,7 @@ namespace VISTA
         {
             this.user = user;
             InitializeComponent();
+            this.AcceptButton = buttonSave;
         }
 
         private void checkBoxPass_CheckedChanged(object sender, EventArgs e)
@@ -89,7 +90,7 @@ namespace VISTA
                 Email = email,
                 Dni = Convert.ToString(dni),
                 Perfil = user.Perfil,
-                Contraseña = pass,
+                Contraseña = Encrypt.GetSHA256(pass),
             };
 
             try

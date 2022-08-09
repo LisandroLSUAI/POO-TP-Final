@@ -21,6 +21,7 @@ namespace VISTA
 		public RegistroForm()
         {
             InitializeComponent();
+			this.AcceptButton = btnRegistrar;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -83,10 +84,11 @@ namespace VISTA
 			    } else {
 					perfil = profileControl.Obtener_Perfil_Cliente();
 				}
+
 				Usuario nuevoUsuario = new Usuario
 				{
 					Nombre = nombre,
-					Contraseña = pass,
+					Contraseña = Encrypt.GetSHA256(pass),
 					Dni = Convert.ToString(dni),
 					Email = email,
 					Perfil = perfil,
@@ -149,9 +151,10 @@ namespace VISTA
 		private bool CheckSuperAdminCredentials()
         {
 			string superAdminPass = textBoxSuperAdminPass.Text;
+			string encSuperAdminPass = Encrypt.GetSHA256(superAdminPass);
 			try 
 			{ 
-				return userControl.Obtener_SuperAdmin().Contraseña == superAdminPass; 
+				return userControl.Obtener_SuperAdmin().Contraseña == encSuperAdminPass; 
 			} catch(Exception) {
 				return false; 
 			}

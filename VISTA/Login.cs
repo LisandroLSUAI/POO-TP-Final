@@ -17,36 +17,43 @@ namespace VISTA
         public Login()
         {
             InitializeComponent();
+            this.AcceptButton = btnAceptar;
         }
 
 		private void button1_Click(object sender, EventArgs e)
 		{
             string nombre = usuarioTxt.Text;
             string pass = passTxt.Text;
+            string encPass = Encrypt.GetSHA256(pass);
 
             ControladoraUsuarios controladora = ControladoraUsuarios.obtener_instancia();
 
             Usuario usuario;
             try
             {
-                usuario = controladora.Listar_Usuarios().Find(user => user.Nombre == nombre && user.Contraseña == pass);
+                usuario = controladora.Listar_Usuarios().Find(user => user.Nombre == nombre);
             } catch(Exception error)
             {
                 ShowError("Error al ingresar a la base de datos: " + error.Message);
                 return;
             }
 
-            if (usuario != null)
+            if (usuario == null)
 			{
-                //FormGestionarUsuarios form = new FormGestionarUsuarios(usuario.Id);
-                //form.Show();
-                MenuPrincipal menu = new MenuPrincipal(usuario);
-                menu.ShowDialog();
-                this.Close();
-            } else
-			{
-                ShowError("Credenciales Incorrectas");
-			}
+                ShowError("El usuario con el nombre ingresado no existe.");
+                return;
+            }
+
+            if (usuario.Contraseña != encPass)
+            {
+                ShowError("La contraseña ingresada es incorrecta.");
+            }
+
+            //FormGestionarUsuarios form = new FormGestionarUsuarios(usuario.Id);
+            //form.Show();
+            MenuPrincipal menu = new MenuPrincipal(usuario);
+            this.Close();
+            menu.ShowDialog();
         }
 
         private void ShowError(string msg)
