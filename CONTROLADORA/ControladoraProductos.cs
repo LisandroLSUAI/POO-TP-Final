@@ -22,32 +22,32 @@ namespace CONTROLADORA
         }
 
         //Metodos Productos
-        public static List<MODELO.Productos> Listar_Productos()
+        public List<MODELO.Producto> Listar_Productos()
         {
-            return MODELO.SingletonContexto.obtener_instancia().Contexto.ProductosSet.ToList();
+            return MODELO.SingletonContexto.obtener_instancia().Contexto.ProductoSet.ToList();
         }
 
-        public MODELO.Productos Obtener_Producto(int idProducto)
+        public MODELO.Producto Obtener_Producto(int idProducto)
         {
-            return MODELO.SingletonContexto.obtener_instancia().Contexto.ProductosSet.Find(idProducto);
+            return MODELO.SingletonContexto.obtener_instancia().Contexto.ProductoSet.Find(idProducto);
         }
 
-        public static void Agregar_Producto(MODELO.Productos producto)
+        public void Agregar_Producto(MODELO.Producto producto)
         {
-            MODELO.SingletonContexto.obtener_instancia().Contexto.ProductosSet.Add(producto);
+            MODELO.SingletonContexto.obtener_instancia().Contexto.ProductoSet.Add(producto);
             MODELO.SingletonContexto.obtener_instancia().Contexto.SaveChanges();
         }
 
-        public static void Modificar_Producto(MODELO.Productos producto, MODELO.Productos prodNew)
+        public void Modificar_Producto(MODELO.Producto producto, MODELO.Producto prodNew)
         {
-            MODELO.SingletonContexto.obtener_instancia().Contexto.ProductosSet.Remove(producto);
-            MODELO.SingletonContexto.obtener_instancia().Contexto.ProductosSet.Add(prodNew);
+            MODELO.SingletonContexto.obtener_instancia().Contexto.ProductoSet.Remove(producto);
+            MODELO.SingletonContexto.obtener_instancia().Contexto.ProductoSet.Add(prodNew);
             MODELO.SingletonContexto.obtener_instancia().Contexto.SaveChanges();
         }
 
-        public static void Eliminar_Producto(MODELO.Productos producto)
+        public void Eliminar_Producto(MODELO.Producto producto)
         {
-            MODELO.SingletonContexto.obtener_instancia().Contexto.ProductosSet.Remove(producto);
+            MODELO.SingletonContexto.obtener_instancia().Contexto.ProductoSet.Remove(producto);
             MODELO.SingletonContexto.obtener_instancia().Contexto.SaveChanges();
         }
     }

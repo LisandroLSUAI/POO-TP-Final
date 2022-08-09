@@ -136,5 +136,11 @@ namespace VISTA
                 this.Close();
             }
         }
+
+        private void buttonPedidos_Click(object sender, EventArgs e)
+        {
+            FormGestionarPedidos form = new FormGestionarPedidos(userControl.Obtener_Usuario(usuarioId));
+            form.Show();
+        }
     }
 }

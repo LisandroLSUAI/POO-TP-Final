@@ -7,12 +7,15 @@
       <Diagram DiagramId="11fdc4f2a2bb4d1ebdff193a82bd2331" Name="Diagram1" ZoomLevel="108" >
         <EntityTypeShape EntityType="Contexto.Usuario" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="Contexto.Perfil" Width="1.5" PointX="2.75" PointY="0.75" />
-        <EntityTypeShape EntityType="Contexto.Formulario" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Contexto.Permiso" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="Contexto.Formulario" Width="1.5" PointX="4.625" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Contexto.Permiso" Width="1.5" PointX="6.5" PointY="0.75" />
         <AssociationConnector Association="Contexto.UsuarioPerfil" />
         <AssociationConnector Association="Contexto.FormularioPermiso" />
         <AssociationConnector Association="Contexto.PerfilFormulario" />
-        <EntityTypeShape EntityType="Contexto.Productos" Width="1.5" PointX="5" PointY="0.75" />
+        <EntityTypeShape EntityType="Contexto.Producto" Width="1.5" PointX="3.125" PointY="3.75" />
+        <EntityTypeShape EntityType="Contexto.Pedido" Width="1.5" PointX="0.75" PointY="3.75" />
+        <AssociationConnector Association="Contexto.UsuarioPedido" />
+        <AssociationConnector Association="Contexto.PedidoProducto" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

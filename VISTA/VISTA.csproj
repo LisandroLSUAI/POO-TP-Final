@@ -77,6 +77,12 @@
       <DependentUpon>DetalleProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="Encrypt.cs" />
+    <Compile Include="FormGestionarPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGestionarPedidos.Designer.cs">
+      <DependentUpon>FormGestionarPedidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormModificarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DetalleProductos.resx">
       <DependentUpon>DetalleProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGestionarPedidos.resx">
+      <DependentUpon>FormGestionarPedidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormGestionarUsuarios.resx">
       <DependentUpon>FormGestionarUsuarios.cs</DependentUpon>

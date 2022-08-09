@@ -13,7 +13,8 @@ namespace VISTA
     public partial class DetalleProductos : Form
     {
         string accion = "";
-        private MODELO.Productos producto;
+        private MODELO.Producto producto;
+        private CONTROLADORA.ControladoraProductos productControl = CONTROLADORA.ControladoraProductos.obtener_instancia();
         public DetalleProductos()
         {
             InitializeComponent();
@@ -44,25 +45,36 @@ namespace VISTA
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            MODELO.Productos prod = new MODELO.Productos();
-            prod.Id = Convert.ToInt32(txtIdProducto.Text);
-            prod.Nombre = txtNombreProducto.Text;
+            string prodName = txtNombreProducto.Text;
+            int prodId = Convert.ToInt32(txtIdProducto.Text);
+            MODELO.Producto newProd = new MODELO.Producto();
+            newProd.Nombre = prodName;
+            newProd.Id = prodId;
             
+            MODELO.Producto selectedProd = productControl.Listar_Productos().Find(prod => prod.Id == prodId);
+
+
             //conectarse a la BD y Modificar segun txt
-            switch (accion)
+
+            if (accion == "")
             {
-                case "modificar":
-                    CONTROLADORA.ControladoraProductos.Modificar_Producto(producto, prod);
-                    break;
-                case "eliminar":
-                    CONTROLADORA.ControladoraProductos.Eliminar_Producto(prod);
-                    break;
-                case "":
-                    CONTROLADORA.ControladoraProductos.Agregar_Producto(producto);
-                    break;                
+                if (selectedProd != null)
+                {
+                    ShowError("El producto con el nombre ingresado ya existe.");
+                    return;
+                }
+                productControl.Agregar_Producto(newProd);
+                return;
             }
-                        
+
+            productControl.Modificar_Producto(selectedProd, newProd);      
             this.Close();
+
+        }
+
+        private void ShowError(string msg)
+        {
+            MessageBox.Show(msg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

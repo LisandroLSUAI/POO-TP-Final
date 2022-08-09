@@ -12,22 +12,19 @@ namespace MODELO
     using System;
     using System.Collections.Generic;
     
-    public partial class Usuario
+    public partial class Pedido
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Usuario()
+        public Pedido()
         {
-            this.Pedidos = new HashSet<Pedido>();
+            this.Producto = new HashSet<Producto>();
         }
     
         public int Id { get; set; }
-        public string Nombre { get; set; }
-        public string Email { get; set; }
-        public string Dni { get; set; }
-        public string Contraseña { get; set; }
+        public int UsuarioId { get; set; }
     
-        public virtual Perfil Perfil { get; set; }
+        public virtual Usuario Usuario { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Pedido> Pedidos { get; set; }
+        public virtual ICollection<Producto> Producto { get; set; }
     }
 }

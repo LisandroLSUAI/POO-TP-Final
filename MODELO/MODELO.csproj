@@ -56,6 +56,9 @@
     <Compile Include="Formulario.cs">
       <DependentUpon>Contexto.tt</DependentUpon>
     </Compile>
+    <Compile Include="Pedido.cs">
+      <DependentUpon>Contexto.tt</DependentUpon>
+    </Compile>
     <Compile Include="Perfil.cs">
       <DependentUpon>Contexto.tt</DependentUpon>
     </Compile>
@@ -78,7 +81,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Contexto.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Productos.cs">
+    <Compile Include="Producto.cs">
       <DependentUpon>Contexto.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

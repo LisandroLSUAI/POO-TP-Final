@@ -12,9 +12,10 @@ namespace MODELO
     using System;
     using System.Collections.Generic;
     
-    public partial class Productos
+    public partial class Producto
     {
         public int Id { get; set; }
         public string Nombre { get; set; }
+        public int PedidoId { get; set; }
     }
 }

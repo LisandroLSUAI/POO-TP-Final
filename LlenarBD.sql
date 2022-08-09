@@ -29,4 +29,4 @@ insert into FormularioPermiso values (1, 3)
 -- Asignar a un perfil un formulario en especifico. Perfil 2 usa formulario 1.
  insert into PerfilFormulario values (2, 1)
 
-insert into Usuarios values ('SuperAdmin', 'sistemas@test.com', '000000', 'Banana1234', 2)
+insert into Usuarios values ('SuperAdmin', 'sistemas@test.com', '000000', '19650316352ba6dce9e85a135308948d7364e3c85bd2c6ffff980c421fa3ccf0', 2)

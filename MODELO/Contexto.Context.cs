@@ -29,6 +29,7 @@ namespace MODELO
         public virtual DbSet<Perfil> Perfiles { get; set; }
         public virtual DbSet<Formulario> Formularios { get; set; }
         public virtual DbSet<Permiso> Permisos { get; set; }
-        public virtual DbSet<Productos> ProductosSet { get; set; }
+        public virtual DbSet<Producto> ProductoSet { get; set; }
+        public virtual DbSet<Pedido> Pedidos { get; set; }
     }
 }
