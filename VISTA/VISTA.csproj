@@ -77,6 +77,12 @@
       <DependentUpon>DetalleProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="Encrypt.cs" />
+    <Compile Include="FormAgregarPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAgregarPedido.Designer.cs">
+      <DependentUpon>FormAgregarPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormGestionarPedidos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DetalleProductos.resx">
       <DependentUpon>DetalleProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAgregarPedido.resx">
+      <DependentUpon>FormAgregarPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormGestionarPedidos.resx">
       <DependentUpon>FormGestionarPedidos.cs</DependentUpon>

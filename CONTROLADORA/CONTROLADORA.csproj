@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ControladoraPedidos.cs" />
     <Compile Include="ControladoraPerfiles.cs" />
     <Compile Include="ControladoraProductos.cs" />
     <Compile Include="ControladoraUsuarios.cs" />

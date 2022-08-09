@@ -14,6 +14,7 @@
     <EntitySet Name="Pedidos" EntityType="Contexto.Store.Pedidos" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="FormularioPermiso" EntityType="Contexto.Store.FormularioPermiso" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="PerfilFormulario" EntityType="Contexto.Store.PerfilFormulario" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PedidoProducto" EntityType="Contexto.Store.PedidoProducto" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="UsuarioPerfil" Association="Contexto.Store.UsuarioPerfil">
       <End Role="Usuario" EntitySet="Usuarios" />
       <End Role="Perfil" EntitySet="Perfiles" />
@@ -38,9 +39,13 @@
       <End Role="Usuario" EntitySet="Usuarios" />
       <End Role="Pedido" EntitySet="Pedidos" />
     </AssociationSet>
-    <AssociationSet Name="PedidoProducto" Association="Contexto.Store.PedidoProducto">
+    <AssociationSet Name="FK_PedidoProducto_Pedido" Association="Contexto.Store.FK_PedidoProducto_Pedido">
       <End Role="Pedido" EntitySet="Pedidos" />
+      <End Role="PedidoProducto" EntitySet="PedidoProducto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PedidoProducto_Producto" Association="Contexto.Store.FK_PedidoProducto_Producto">
       <End Role="Producto" EntitySet="ProductoSet" />
+      <End Role="PedidoProducto" EntitySet="PedidoProducto" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="Usuarios">
@@ -84,7 +89,6 @@
     <Property Name="Id" Type="int" Nullable="false" />
     <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
     <Property Name="PedidoId" Type="int" Nullable="false" />
-    <Property Name="PedidoProducto_Producto_Id" Type="int" Nullable="true" />
   </EntityType>
   <EntityType Name="Pedidos">
     <Key>
@@ -109,6 +113,14 @@
     <Property Name="Perfiles_Id" Type="int" Nullable="false" />
     <Property Name="Formularios_Id" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="PedidoProducto">
+    <Key>
+      <PropertyRef Name="Pedidos_Id" />
+      <PropertyRef Name="Productos_Id" />
+    </Key>
+    <Property Name="Pedidos_Id" Type="int" Nullable="false" />
+    <Property Name="Productos_Id" Type="int" Nullable="false" />
+  </EntityType>
   <Association Name="UsuarioPerfil">
     <End Role="Usuario" Type="Contexto.Store.Usuarios" Multiplicity="*" />
     <End Role="Perfil" Type="Contexto.Store.Perfiles" Multiplicity="1" />
@@ -130,18 +142,6 @@
       </Principal>
       <Dependent Role="Pedido">
         <PropertyRef Name="UsuarioId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="PedidoProducto">
-    <End Role="Pedido" Type="Contexto.Store.Pedidos" Multiplicity="0..1" />
-    <End Role="Producto" Type="Contexto.Store.ProductoSet" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Pedido">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Producto">
-        <PropertyRef Name="PedidoProducto_Producto_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -190,6 +190,30 @@
       </Principal>
       <Dependent Role="PerfilFormulario">
         <PropertyRef Name="Formularios_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PedidoProducto_Pedido">
+    <End Role="Pedido" Type="Contexto.Store.Pedidos" Multiplicity="1" />
+    <End Role="PedidoProducto" Type="Contexto.Store.PedidoProducto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pedido">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PedidoProducto">
+        <PropertyRef Name="Pedidos_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PedidoProducto_Producto">
+    <End Role="PedidoProducto" Type="Contexto.Store.PedidoProducto" Multiplicity="*" />
+    <End Role="Producto" Type="Contexto.Store.ProductoSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PedidoProducto">
+        <PropertyRef Name="Productos_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -284,6 +308,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
           <Property Name="Nombre" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="PedidoId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Pedidos" Relationship="Contexto.PedidoProducto" FromRole="Producto" ToRole="Pedido" />
         </EntityType>
         <EntityType Name="Pedido">
           <Key>
@@ -292,7 +317,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="Usuario" Relationship="Contexto.UsuarioPedido" FromRole="Pedido" ToRole="Usuario" />
           <Property Name="UsuarioId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Producto" Relationship="Contexto.PedidoProducto" FromRole="Pedido" ToRole="Producto" />
+          <NavigationProperty Name="Productos" Relationship="Contexto.PedidoProducto" FromRole="Pedido" ToRole="Producto" />
         </EntityType>
         <Association Name="UsuarioPedido">
           <End Type="Contexto.Usuario" Role="Usuario" Multiplicity="1" />
@@ -307,7 +332,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="PedidoProducto">
-          <End Type="Contexto.Pedido" Role="Pedido" Multiplicity="0..1" />
+          <End Type="Contexto.Pedido" Role="Pedido" Multiplicity="*" />
           <End Type="Contexto.Producto" Role="Producto" Multiplicity="*" />
         </Association>
       </Schema>
@@ -394,14 +419,13 @@
         <ScalarProperty Name="Id" ColumnName="Formularios_Id" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="PedidoProducto" TypeName="Contexto.PedidoProducto" StoreEntitySet="ProductoSet">
+    <AssociationSetMapping Name="PedidoProducto" TypeName="Contexto.PedidoProducto" StoreEntitySet="PedidoProducto">
       <EndProperty Name="Pedido">
-        <ScalarProperty Name="Id" ColumnName="PedidoProducto_Producto_Id" />
+        <ScalarProperty Name="Id" ColumnName="Pedidos_Id" />
       </EndProperty>
       <EndProperty Name="Producto">
-        <ScalarProperty Name="Id" ColumnName="Id" />
+        <ScalarProperty Name="Id" ColumnName="Productos_Id" />
       </EndProperty>
-      <Condition ColumnName="PedidoProducto_Producto_Id" IsNull="false" />
     </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>

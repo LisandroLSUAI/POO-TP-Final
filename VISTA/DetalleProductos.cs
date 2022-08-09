@@ -35,11 +35,11 @@ namespace VISTA
             txtIdProducto.Text = producto.Id.ToString();
             txtIdProducto.ReadOnly = true;
 
-            txtNombreProducto.Text = producto.Nombre;
-        }
+            txtNombreProducto.Text = producto.Nombre;        }
         
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
 
@@ -64,10 +64,13 @@ namespace VISTA
                     return;
                 }
                 productControl.Agregar_Producto(newProd);
+                this.DialogResult = DialogResult.OK;
+                this.Close();
                 return;
             }
 
-            productControl.Modificar_Producto(selectedProd, newProd);      
+            productControl.Modificar_Producto(selectedProd, newProd);
+            this.DialogResult = DialogResult.OK;
             this.Close();
 
         }

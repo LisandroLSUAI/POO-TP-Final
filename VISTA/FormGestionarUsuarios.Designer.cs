@@ -40,8 +40,11 @@
             // 
             this.dgvGestionarUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGestionarUsuarios.Location = new System.Drawing.Point(12, 12);
+            this.dgvGestionarUsuarios.MultiSelect = false;
             this.dgvGestionarUsuarios.Name = "dgvGestionarUsuarios";
             this.dgvGestionarUsuarios.ReadOnly = true;
+            this.dgvGestionarUsuarios.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvGestionarUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvGestionarUsuarios.Size = new System.Drawing.Size(568, 352);
             this.dgvGestionarUsuarios.TabIndex = 0;
             this.dgvGestionarUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGestionarUsuarios_CellContentClick);
@@ -91,6 +94,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(596, 415);
             this.Controls.Add(this.buttonPedidos);
             this.Controls.Add(this.btnEliminar);

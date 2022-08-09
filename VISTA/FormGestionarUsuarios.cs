@@ -89,6 +89,8 @@ namespace VISTA
                 {
                     Usuario selectedUser = selectedRow.DataBoundItem as Usuario;
 
+                    if (selectedUser == null) break;
+
                     if (selectedUser.Perfil.Id == Perfil.SUPER_ADMIN)
                     {
                         ShowError("¡No puedes borrar la cuenta de Super Admin!");
@@ -139,6 +141,7 @@ namespace VISTA
 
         private void buttonPedidos_Click(object sender, EventArgs e)
         {
+            Int32 idUsuario = Convert.ToInt32(dgvGestionarUsuarios.SelectedRows[0].Cells[0]);
             FormGestionarPedidos form = new FormGestionarPedidos(userControl.Obtener_Usuario(usuarioId));
             form.Show();
         }

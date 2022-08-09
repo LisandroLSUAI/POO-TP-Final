@@ -15,7 +15,7 @@ namespace VISTA
     public partial class FormGestionarPedidos : Form
     {
 
-        private ControladoraUsuarios usuarios = ControladoraUsuarios.obtener_instancia();
+        private ControladoraUsuarios usuariosControl = ControladoraUsuarios.obtener_instancia();
         private Usuario usuario;
         public FormGestionarPedidos(Usuario usuario)
         {
@@ -25,12 +25,21 @@ namespace VISTA
 
         private void FormGestionarPedidos_Load(object sender, EventArgs e)
         {
-            
+            dgvGestionarPedidos.DataSource = usuario.Pedidos;
+            this.Text = "Pedidos de " + usuario.Nombre;
         }
 
         private void ShowError(string msg)
         {
             MessageBox.Show(msg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            FormAgregarPedido form = new FormAgregarPedido(usuario.Id);
+            DialogResult result = form.ShowDialog();
+            usuario = usuariosControl.Obtener_Usuario(usuario.Id);
+            dgvGestionarPedidos.DataSource = usuario.Pedidos;
         }
     }
 }

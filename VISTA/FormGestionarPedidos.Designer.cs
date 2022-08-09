@@ -61,6 +61,7 @@
             this.btnAgregar.TabIndex = 5;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // dgvGestionarPedidos
             // 
@@ -68,6 +69,8 @@
             this.dgvGestionarPedidos.Location = new System.Drawing.Point(12, 12);
             this.dgvGestionarPedidos.Name = "dgvGestionarPedidos";
             this.dgvGestionarPedidos.ReadOnly = true;
+            this.dgvGestionarPedidos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvGestionarPedidos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvGestionarPedidos.Size = new System.Drawing.Size(568, 352);
             this.dgvGestionarPedidos.TabIndex = 4;
             // 
